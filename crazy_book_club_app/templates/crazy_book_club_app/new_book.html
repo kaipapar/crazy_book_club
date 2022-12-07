@@ -1,0 +1,11 @@
+<!-- template for a site which allows users to add a book via a form-->
+
+{% extends "crazy_book_club_app/base.html" %} 
+{% block content %} 
+    <p> Add a new book:</p>
+    <form action="{% url 'crazy_book_club_app:new_book' %}" method='POST'> <!--??? post or POST-->
+        {% csrf_token %} 
+        {{ form.as_p }} 
+        <button name="submit">Add book</button>
+    </form>
+{% endblock content %} 

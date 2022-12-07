@@ -1,0 +1,17 @@
+{% extends "crazy_book_club_app/base.html" %} 
+
+{% block content %} 
+
+{% if form.errors %} 
+    <p>Your username and password didn't math. Please try again.</p>
+{% endif %} 
+
+<form method="post" action="{% url 'users:login' %}"Log in>  <!-- should there be an % mark after ---login'? -->
+    {% csrf_token %} 
+    {{ form.as_p }} 
+
+    <button name="submit">Log in</button> 
+    <input type="hidden" name="next"    
+        value="{% url 'crazy_book_club_app:index' %}"/> <!--text or next on line 13-->
+</form>
+{% endblock content %} 

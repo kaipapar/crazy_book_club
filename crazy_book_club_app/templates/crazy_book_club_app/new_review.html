@@ -1,0 +1,13 @@
+<!-- template for a site which allows users to add a review to a pre-existing book
+     via a form-->
+
+{% extends "crazy_book_club_app/base.html" %} 
+{% block content %} 
+<p><a href="{% url 'crazy_book_club_app:bookname' bookname.id %}">{{bookname}}</a></p>
+    <p> Add a new review:</p>
+    <form action="{% url 'crazy_book_club_app:new_review' bookname.id %}" method='POST'>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button name="submit">Add review</button>
+    </form>
+{% endblock content %}

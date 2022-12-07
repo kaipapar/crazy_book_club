@@ -1,0 +1,23 @@
+<!-- this page lists all books that have been listed on the db-->
+
+{% extends "crazy_book_club_app/base.html" %}
+
+{% block content %}
+
+<p>Revieved book names: </p>
+
+    <ul>
+        {% for bookname in booknames %}
+            <li>
+                <a href="{% url 'crazy_book_club_app:bookname' bookname.id %}">{{ bookname }}</a>
+            </li>
+        {% empty %}
+            <li> No books have been added yet. </li>
+        {% endfor %}
+
+    </ul>
+
+<!-- adding a new book-->
+    <a href="{% url 'crazy_book_club_app:new_book' %}">Add a new book</a>
+
+{% endblock content %}

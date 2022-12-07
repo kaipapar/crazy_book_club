@@ -1,0 +1,15 @@
+<p>
+    <a href="{% url 'crazy_book_club_app:index' %}">Crazy Book Club</a> -
+    <a href="{% url 'crazy_book_club_app:booknames' %}">Book Names</a> -
+
+
+    {% if user.is_authenticated %} 
+        Hello, {{ user.username }}. -
+        <a href="{% url 'users:logout' %}">Log out</a>
+    {% else %} 
+        <a href="{% url 'users:register' %}"> Register </a> -
+        <a href="{% url 'users:login' %}"> Log in </a>  <!-- url, not urls as in instructions-->
+    {% endif %} 
+</p>
+
+{% block content %} {% endblock content %}

@@ -1,0 +1,4 @@
+{
+    "python.defaultInterpreterPath": "home/crazy_book_club/cbc_env/bin/python3.10",
+    "python.terminal.activateEnvironment": false
+}
