@@ -18,3 +18,5 @@ urlpatterns= [
     #page for editing reviews
     path('edit_review/<int:review_id>/', views.edit_review, name='edit_review'),
 ]
+
+#this is a comment to test git
